@@ -2,12 +2,13 @@ import React,{useState,useEffect} from 'react';
 import '../css/keyboard.css';
 
 const Keyboard=()=>{
-    
+    useEffect(()=>{document.getElementById('audio').playbackRate=3})
     const [text,setText]=useState("");
     const [asskey,setAsskey]=useState();
     const asskeychange=(event)=>{
         setAsskey(event.which || event.keyCode);
     }
+    var up=-16.8;
     const onchange=(e)=>{
         setText(e.target.value);
         document.getElementById('audio').play()
@@ -18,17 +19,28 @@ const Keyboard=()=>{
         if(asskey===32)
         document.getElementById('space').style.background="blue";
         if(asskey===13){
+        up=up-16.8;
+        console.log("working");
+        var div=document.querySelector('p');
+        var br=document.createElement('br');
+        var span = document.createElement('span');
+        span.textContent = e.target.value;
+        div.appendChild(br);
+        div.appendChild(span);
+        div.style.transform=`translateY(${up}px)`;
         const arr=document.querySelectorAll('li')
         for(var i=0;i<arr.length;i++){
             arr[i].style.background="white";
             arr[i].style.color="black";
         }
+        setText("");
        }
 
     }
     return(
         <div className="container">
-            <textarea id="write" onKeyPress={asskeychange} onChange={onchange} value={text} rows="1" cols="60"></textarea>
+            <p className="p">Ready to Start!!!!</p>
+            <textarea id="write" onKeyPress={asskeychange} onChange={onchange} value={text}></textarea>
             <ul id="keyboard">
             <li className="symbol" id="`"><span className="off">`</span><span className="on">~</span></li>
             <li className="symbol" id="1"><span className="off">1</span><span className="on">!</span></li>

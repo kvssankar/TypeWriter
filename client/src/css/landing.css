@@ -1,0 +1,49 @@
+.bg{
+    background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+    pointer-events: none;
+}
+
+.parent{
+    position: relative;
+    top:50px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+img{
+    position: relative;
+    height:600px;
+    width: 600px;
+    bottom: 80px;
+}
+
+.jumbotron{
+    background: none;
+}
+
+.lead{
+    margin-top: 20px 0 20px;
+}
+
+.react-rotating-text-cursor {
+    animation: blinking-cursor 0.8s cubic-bezier(0.68, 0.01, 0.01, 0.99) 0s infinite;
+  }
+  
+  @keyframes blinking-cursor {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }

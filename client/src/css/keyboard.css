@@ -6,6 +6,11 @@
     font: 71%/1.5 Verdana, Sans-Serif;
     background: #eee;
     }
+    .p{
+    width: 671px;
+    background-color: white;
+    margin: 50px;
+    }
     #container {
     margin: 100px auto;
     width: 688px;
@@ -13,8 +18,7 @@
     #write {
     margin: 0 0 5px;
     padding: 5px;
-    width: 671px;
-    height: 200px;
+    
     font: 1em/1.5 Verdana, Sans-Serif;
     background: #fff;
     border: 1px solid #f9f9f9;
